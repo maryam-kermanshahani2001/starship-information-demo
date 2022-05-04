@@ -1,0 +1,228 @@
+/*
+Total definitions:
+    The Flexible Box Layout Module,
+    makes it easier to design flexible responsive layout structure without using float or positioning.
+
+    The justify-content property aligns the flexible container's items
+    when the items do not use all available space on the main-axis
+
+    The align-items property specifies the default alignment for items inside the flexible container.
+*/
+
+
+body, html {
+    font-family: 'Roboto Slab', serif;
+    background-image: url("../assets/11848.png");
+    /*background-image: url("../assets/1990457.jpg");*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* the below commands avoid scrolling*/
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+#container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* styling the content box
+opacity specifies the transparency of the content box
+for making it prettier I add border-radius and box-shadow
+CSS transitions allows you to change property values smoothly, over a given duration
+*/
+#content-box {
+    opacity: 0.8;
+    background-color: #000000DD;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    width: 60vw;
+    border-radius: 10px;
+    box-shadow: 0 0 80px 20px #000;
+    transition: background-color 0.50s;
+}
+
+/* when mouse over on content box the background color is going to change darker) */
+#content-box:hover {
+    /*background-color: #efeded;*/
+    background-color: #000000FF;
+
+}
+
+/* h2 tag is the Movie header */
+h2 {
+    font-size: xx-large;
+    color: #faaf67;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+/* A div that contains h2 header */
+#heading-div {
+    display: flex;
+    justify-content: center;
+}
+
+/* All button tags have these properties */
+button {
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px;
+    background-color: transparent;
+    color: azure;
+    border: 1px solid #fff;
+    /*border: 1px solid #000;*/
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 5px;
+
+}
+
+/*in the second page after clicking on starship Button
+ this div will be added to content-box
+ this div contains 2 divs(2 columns) which are starship-info-column and starships-name-column
+
+ */
+#all-column-container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/*
+    all-column-container contains 2divs(2 columns) which are starship-info-column and starships-name-column
+    starship-info-column shows the information of a starship in a column direction
+    with width of 50% of the parent container
+*/
+#starship-info-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+
+}
+
+/*
+    all-column-container contains 2divs(2 columns) which are starship-info-column and starships-name-column
+    starship-name-column shows the name of starships in a column direction
+    with width of 50% of the parent container
+*/
+#starships-name-column {
+    width: 50%;
+}
+
+/*
+  starship name are as buttons
+  with border:none
+  selecting them with .ship-name-button
+  their class name is ship-name-button
+*/
+.ship-name-button {
+    border: none;
+
+}
+
+/* with clicking on a starship-name its info appears in rightColumn
+    there is a key-span and val-span for every pair
+    text-transform:capitalize is to make a block of text have all capital letters
+    with padding:10px generate space around element's content
+*/
+.key-span {
+    text-transform: capitalize;
+    padding: 10px;
+}
+
+/* each starship-info pair is in a separate item-div
+making this div's width 100% to cover a row of right column
+*/
+.item-div {
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: first baseline;
+    width: 100%;
+}
+
+/* each starship-name is in a li with class starship-name-li*/
+.starship-name-li {
+    width: 100%;
+    padding: 10px;
+
+}
+
+/* starship button in first page */
+.StarshipBtn {
+    width: 50%;
+}
+
+/* styling disabled buttons
+when button is disabled the cursor is not-allowed and the opacity of this button decreases
+ */
+button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.2;
+}
+
+/* each starship button in first page is in a div with class 'div2'
+selecting all elements with class 'div2' and setting below properties
+*/
+.div2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+/* selecting all elements with class = 'each-movie-div'
+*/
+.each-movie-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*select all pre tags*/
+pre {
+    font-family: 'Roboto Slab', serif;
+    width: 50%;
+}
+
+/*select element with id = pageWrapper*/
+#pageWrapper {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    margin-top: 50px;
+
+
+}
+
+.pages-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+label {
+    padding: 5px;
+    margin: 5px
+
+}
+
+/* changing color of the buttons on mouse hover */
+button:hover {
+    background-color: #FFFFFFDD;
+    color: #000;
+}
+
+/*selecting all elements with class = 'activated'
+this is for second page when clicking on starship names, the color of selected starship changes.
+*/
+.activated {
+    color: #faaf67;
+}
